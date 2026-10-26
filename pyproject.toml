@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fake-profile-detector"
+version = "1.0.0"
+description = "Production-grade social media synthetic profile and bot detection framework using Graph Neural Networks and baseline classifiers."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "ML Engineering Team" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "numpy>=1.22.0",
+    "pandas>=1.4.0",
+    "scipy>=1.8.0",
+    "scikit-learn>=1.1.0",
+    "torch>=2.0.0",
+    "streamlit>=1.25.0",
+    "matplotlib>=3.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+pythonpath = ["src"]
